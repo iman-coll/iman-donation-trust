@@ -231,7 +231,7 @@ else:
     c1, c2, c3 = st.columns(3)
     c1.metric("Items donated", sum(i["qty"] for r in h for i in r["items"]))
     c2.metric("Donations", len(h))
-    c3.metric("Categories", len({i["cat"] for r in h for i in r["items"]))
+    c3.metric("Categories", len({i["cat"] for r in h for i in r["items"]}))
     badges = [("💝 First Gift", len(h) >= 1), ("💛 Kind Heart", len(h) >= 3), ("🌟 Super Giver", len(h) >= 5),
               ("🧸 Toy Angel", any(i["cat"] == "Toys" for r in h for i in r["items"])),
               ("📚 Book Buddy", any(i["cat"] == "Books" for r in h for i in r["items"])),
